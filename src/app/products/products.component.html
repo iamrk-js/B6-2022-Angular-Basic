@@ -1,2 +1,37 @@
+<div class="form-group">
+    <label for="">Product Search</label>
+    <input type="text" class="form-control" (keyup)="onProductSearch($event)">
+</div>
+<div class="form-group">
+    <label for="">Product Search</label>
+    <input type="text" class="form-control" [(ngModel)]="searchProductName">
+</div>
+<p [innerHTML]="searchProductName">
+
+</p>
+
+<button class="btn btn-primary mb-4 mr-4" [disabled]="isDisabled" (click)="getProductStatus()">Add Product</button>
+
+<button class="btn btn-primary mb-4" [disabled]="noOfProducts === 0" 
+(click)="onProductRemove()">Remove Product</button>
+
+<p class="alert alert-info mb-4">
+    {{productsStatus}}
+</p>
+
 <app-product></app-product>
 <app-product></app-product>
+<!-- <div app-product></div> -->
+<!-- <div class="app-product"></div> -->
+
+<!-- 
+    Directives 
+
+    Which gives instruction to the dom
+    Component
+    Attribute Directives
+    Structural Directives
+
+
+
+-->

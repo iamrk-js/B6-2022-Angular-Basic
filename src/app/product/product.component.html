@@ -1,4 +1,40 @@
-
-<p class="info">
+<hr>
+<!-- <p class="info">
     The Product is {{pName}} With ID {{pId}} and Status is {{pStatus}}
+</p> -->
+<!-- <p [ngStyle]="{backgroundColor : getBgColor()}"> -->
+<p [ngStyle]="{backgroundColor : isProductAvialble ? 'orange' : '#ccc'}" 
+    [ngClass]="{
+                    'text-white' : isProductAvialble,
+                    'text-danger' : !isProductAvialble,
+                    'p-4' : isProductAvialble,
+                    'p-2' : !isProductAvialble
+                }">
+    The Product is {{pName}} With ID {{getProductId()}}
+
+    {{isProductAvialble}}
+
+    <strong *ngIf="isProductAvialble; else productNotAvail"> and The Product is available</strong>
+    <!-- <strong *ngIf="!isProductAvialble"> and The Product is not available</strong> -->
+    <ng-template #productNotAvail>
+        <strong>
+            and The Product is not available
+        </strong>
+    </ng-template>
 </p>
+
+
+<!-- <p [innerHTML]="pName">
+   
+</p>
+<p [innerHTML]="'Iphone 14'">
+   
+</p> -->
+
+<!-- // innerHTML , innertext, textContent, value 
+
+
+<
+    [ngClass] = "{'className' : coditionForClassToBeAdd}"
+>
+-->

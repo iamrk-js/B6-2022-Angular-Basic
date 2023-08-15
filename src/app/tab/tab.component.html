@@ -1,0 +1,80 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link" (click)="frameWork = 'angular'"
+            [ngClass]="{active : frameWork.toLowerCase().trim()  === 'angular'}">
+            Angular
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link" (click)="frameWork = 'react'"
+            [ngClass]="{active : frameWork.toLowerCase().trim()  === 'react'}">
+            React
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link" (click)="onFrameWorkChange($event)"
+            [ngClass]="{active : frameWork.toLowerCase().trim()  === 'vue'}">
+            Vue
+        </a>
+    </li>
+</ul>
+
+<div class="tabs-body" [ngSwitch]="frameWork.toLowerCase().trim()">
+    <div class="card" *ngSwitchCase="'angular'">
+        <div class="card-body">
+            <p>
+                <strong>Angular</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum excepturi harum
+                cum! Atque molestiae,
+                nemo illo modi deleniti totam tenetur facilis veniam nobis incidunt. Quas!
+            </p>
+        </div>
+    </div>
+    <div class="card" *ngSwitchCase="'react'">
+        <div class="card-body">
+            <p>
+                <strong>React</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum excepturi harum
+                cum! Atque molestiae,
+                nemo illo modi deleniti totam tenetur facilis veniam nobis incidunt. Quas!
+            </p>
+        </div>
+    </div>
+    <div class="card" *ngSwitchCase="'vue'">
+        <div class="card-body">
+            <p>
+                <strong>Vue</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum excepturi harum cum!
+                Atque molestiae,
+                nemo illo modi deleniti totam tenetur facilis veniam nobis incidunt. Quas!
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="tabs-body">
+    <div class="card" *ngIf="frameWork.toLowerCase().trim() === 'angular'">
+        <div class="card-body">
+            <p>
+              <strong>Angular</strong>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum excepturi harum cum! Atque molestiae,
+                nemo illo modi deleniti totam tenetur facilis veniam nobis incidunt. Quas!
+            </p>
+        </div>
+    </div>
+    <div class="card" *ngIf="frameWork.toLowerCase().trim() === 'react'">
+        <div class="card-body">
+            <p>
+                <strong>React</strong>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum excepturi harum cum! Atque molestiae,
+                nemo illo modi deleniti totam tenetur facilis veniam nobis incidunt. Quas!
+            </p>
+        </div>
+    </div>
+    <div class="card" *ngIf="frameWork.toLowerCase().trim() === 'vue'">
+        <div class="card-body">
+            <p>
+                <strong>Vue</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum excepturi harum cum! Atque molestiae,
+                nemo illo modi deleniti totam tenetur facilis veniam nobis incidunt. Quas!
+            </p>
+        </div>
+    </div>
+</div> -->
